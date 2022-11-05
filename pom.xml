@@ -27,6 +27,20 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-csv -->
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-csv</artifactId>
+    <version>1.9.0</version>
+</dependency>
+
+<dependency>
+<groupId>commons-lang</groupId>
+<artifactId>commons-lang</artifactId>
+<version>2.1</version>
+</dependency>
+
 	</dependencies>
 
 	<build>
