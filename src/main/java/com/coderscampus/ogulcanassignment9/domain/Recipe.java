@@ -6,54 +6,33 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope("prototype")
 public class Recipe {
-	 public Recipe() {
-	    	
-	    }
+	public Recipe() {
+
+	}
 
 	private Integer cookingMinutes;
 
-//    public Recipe(Integer cookingMinutes, Boolean dairyFree, Boolean glutenFree, String instructions,
-//			Double preparationMinutes, Double pricePerServing, Double readyInMinutes, Integer servings,
-//			Double spoonacularScore, String title, Boolean vegan, Boolean vegetarian) {
-//		super();
-//		this.cookingMinutes = cookingMinutes;
-//		this.dairyFree = dairyFree;
-//		this.glutenFree = glutenFree;
-//		this.instructions = instructions;
-//		this.preparationMinutes = preparationMinutes;
-//		this.pricePerServing = pricePerServing;
-//		this.readyInMinutes = readyInMinutes;
-//		this.servings = servings;
-//		this.spoonacularScore = spoonacularScore;
-//		this.title = title;
-//		this.vegan = vegan;
-//		this.vegetarian = vegetarian;
-//	}
-
 	private Boolean dairyFree;
 
-    private Boolean glutenFree;
+	private Boolean glutenFree;
 
-    private String instructions;
+	private String instructions;
 
-    private Double preparationMinutes;
+	private Double preparationMinutes;
 
-    private Double pricePerServing;
+	private Double pricePerServing;
 
-    private Double readyInMinutes;
+	private Double readyInMinutes;
 
-    private Integer servings;
+	private Integer servings;
 
-    private Double spoonacularScore;
+	private Double spoonacularScore;
 
-    private String title;
+	private String title;
 
-    private Boolean vegan;
+	private Boolean vegan;
 
-    private Boolean vegetarian;
-    
-    
-   
+	private Boolean vegetarian;
 
 	public Integer getCookingMinutes() {
 		return cookingMinutes;
@@ -159,9 +138,5 @@ public class Recipe {
 				+ ", spoonacularScore=" + spoonacularScore + ", title=" + title + ", vegan=" + vegan + ", vegetarian="
 				+ vegetarian + "]";
 	}
-	
-
-
-	
 
 }

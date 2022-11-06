@@ -59,8 +59,6 @@ public class FileService {
 				String title =record.get(headers.title);
 				Boolean isVegan = Boolean.valueOf(record.get(headers.vegan));
 				Boolean isVegaratian= Boolean.valueOf(record.get(headers.vegetarian));
-//				AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(JavaConfig.class);
-//				context.getBean("John",cookingMinutes,isDairyFree,isGlutenFree,instructions,prepMinutes,pricePerServing,readyInMinutes,servings,spoonacularScore,title,isVegan,isVegaratian);
 				
 				recipe.setCookingMinutes(cookingMinutes);
 				recipe.setDairyFree(isDairyFree);
@@ -74,7 +72,6 @@ public class FileService {
 				recipe.setTitle(title);
 				recipe.setVegan(isVegan);
 				recipe.setVegetarian(isVegaratian);
-//			list.add(new Recipe(cookingMinutes,isDairyFree,isGlutenFree,instructions,prepMinutes,pricePerServing,readyInMinutes,servings,spoonacularScore,title,isVegan,isVegaratian));;
 			list.add(recipe);
 			
 			}
@@ -83,12 +80,5 @@ public class FileService {
 		return list;
 
 	}
-//	public void getRecipes(String fileName) throws IOException{
-//		list.forEach(System.out::println);
-//		
-//		 
-//		
-//		 
-//	}
 
 }
