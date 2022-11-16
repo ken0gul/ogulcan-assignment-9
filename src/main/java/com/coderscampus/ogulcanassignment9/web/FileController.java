@@ -50,6 +50,13 @@ public class FileController {
 			.filter(item -> item.getVegetarian())
 			.collect(Collectors.toList());
 	}
+	@GetMapping("/vegan")
+	public List<Recipe>  getVegan() throws Exception {
+		List<Recipe> list = fileService.readFile("recipe.txt");
+		return list.stream()
+			.filter(item -> item.getVegan())
+			.collect(Collectors.toList());
+	}
 	
 	
 }
