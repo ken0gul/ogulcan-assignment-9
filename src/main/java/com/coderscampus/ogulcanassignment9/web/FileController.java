@@ -11,14 +11,7 @@ import com.coderscampus.ogulcanassignment9.domain.Recipe;
 import com.coderscampus.ogulcanassignment9.service.FileService;
 
 @RestController
-public class FileController {
-
-//	@Autowired
-//	private FileService fileService;
-	
-	
-		
-	
+public class FileController {	
 	
 	@GetMapping("/all-recipes")
 	public List<Recipe> getAllRecipes() throws IOException {
@@ -26,15 +19,15 @@ public class FileController {
 		 
 		
 		 return fileService.readFile("recipe.txt");
-}
+	}
 	
 	
 	@GetMapping("/gluten-free") 
 	public List<Recipe>  getGlutenFree() throws Exception {
 		FileService fileService = new FileService();
 		return fileService.readFile("recipe.txt").stream()
-			.filter(Recipe::getGlutenFree)
-			.collect(Collectors.toList());
+												 .filter(Recipe::getGlutenFree)
+												 .collect(Collectors.toList());
 	}
 	
 	@GetMapping("/vegan-and-gluten-free")
@@ -43,10 +36,11 @@ public class FileController {
 		FileService fileService = new FileService();
 			
 			return  fileService.readFile("recipe.txt").stream()
-					.filter(Recipe::getGlutenFree)
-					.filter(Recipe::getVegan)
-					.collect(Collectors.toList());
+													  .filter(Recipe::getGlutenFree)
+													  .filter(Recipe::getVegan)
+													  .collect(Collectors.toList());
 	}
+	
 	@GetMapping("/vegetarian")
 	public List<Recipe>  getVegetarian() throws Exception {
 		FileService fileService = new FileService();
@@ -54,6 +48,7 @@ public class FileController {
 												 .filter(Recipe::getVegetarian)
 												 .collect(Collectors.toList());
 	}
+	
 	@GetMapping("/vegan")
 	public List<Recipe>  getVegan() throws Exception {
 		FileService fileService = new FileService();
