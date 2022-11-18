@@ -33,7 +33,7 @@ public class FileController {
 	public List<Recipe>  getGlutenFree() throws Exception {
 		FileService fileService = new FileService();
 		return fileService.readFile("recipe.txt").stream()
-			.filter(item -> item.getGlutenFree())
+			.filter(Recipe::getGlutenFree)
 			.collect(Collectors.toList());
 	}
 	
@@ -43,22 +43,23 @@ public class FileController {
 		FileService fileService = new FileService();
 			
 			return  fileService.readFile("recipe.txt").stream()
-					.filter(item -> item.getGlutenFree())
-					.filter(i -> i.getVegan())
+					.filter(Recipe::getGlutenFree)
+					.filter(Recipe::getVegan)
 					.collect(Collectors.toList());
 	}
 	@GetMapping("/vegetarian")
 	public List<Recipe>  getVegetarian() throws Exception {
 		FileService fileService = new FileService();
-		return fileService.readFile("recipe.txt").stream().filter(item -> item.getVegetarian())
-			.collect(Collectors.toList());
+		return fileService.readFile("recipe.txt").stream()
+												 .filter(Recipe::getVegetarian)
+												 .collect(Collectors.toList());
 	}
 	@GetMapping("/vegan")
 	public List<Recipe>  getVegan() throws Exception {
 		FileService fileService = new FileService();
 		return fileService.readFile("recipe.txt").stream()
-			.filter(item -> item.getVegan())
-			.collect(Collectors.toList());
+												 .filter(Recipe::getVegan)
+												 .collect(Collectors.toList());
 	}
 	
 	
