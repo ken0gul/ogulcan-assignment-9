@@ -9,10 +9,9 @@ import java.util.List;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVFormat.Builder;
 import org.apache.commons.csv.CSVRecord;
-import  org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Service;
-
+import  org.springframework.context.ApplicationContext;
 import com.coderscampus.ogulcanassignment9.config.JavaConfig;
 import com.coderscampus.ogulcanassignment9.domain.Recipe;
 
@@ -28,10 +27,10 @@ public class FileService {
 	
 	
 //	@Autowired
-//	private Recipe recipe;
+	
+	private Recipe recipe;
 
 	public List<Recipe> readFile(String fileName) throws IOException {
-		
 		Reader in = new FileReader(fileName);
 		Builder builder = CSVFormat.DEFAULT.builder().setEscape('\\').setIgnoreSurroundingSpaces(true)
 				.setIgnoreSurroundingSpaces(true)
@@ -78,8 +77,6 @@ public class FileService {
 			}
 			
 		}
-		
-		
 		return list;
 
 	}
