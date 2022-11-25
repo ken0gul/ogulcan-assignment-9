@@ -11,7 +11,7 @@ import com.coderscampus.ogulcanassignment9.domain.Recipe;
 import com.coderscampus.ogulcanassignment9.service.FileService;
 
 @RestController
-public class FileController {	
+public class RecipeController {	
 	
 	@GetMapping("/all-recipes")
 	public List<Recipe> getAllRecipes() throws IOException {
