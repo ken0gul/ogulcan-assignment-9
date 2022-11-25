@@ -2,7 +2,6 @@ package com.coderscampus.ogulcanassignment9.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
 
 import com.coderscampus.ogulcanassignment9.domain.Recipe;
 

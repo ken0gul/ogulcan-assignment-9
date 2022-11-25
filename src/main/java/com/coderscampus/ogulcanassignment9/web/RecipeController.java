@@ -4,21 +4,25 @@ import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.coderscampus.ogulcanassignment9.domain.Recipe;
 import com.coderscampus.ogulcanassignment9.service.FileService;
+import com.coderscampus.ogulcanassignment9.service.RecipeService;
 
 @RestController
 public class RecipeController {	
 	
+	@Autowired
+	public RecipeService recipeService;
+	
 	@GetMapping("/all-recipes")
 	public List<Recipe> getAllRecipes() throws IOException {
-		FileService fileService = new FileService();
 		 
 		
-		 return fileService.readFile("recipe.txt");
+		 return recipeService.getAllRecipes();
 	}
 	
 	
