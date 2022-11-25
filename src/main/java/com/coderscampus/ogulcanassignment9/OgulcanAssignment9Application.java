@@ -8,6 +8,7 @@ public class OgulcanAssignment9Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(OgulcanAssignment9Application.class, args);
+		
 	}
 
 }
