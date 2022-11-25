@@ -3,6 +3,7 @@ package com.coderscampus.ogulcanassignment9.service;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,5 +32,28 @@ public class RecipeService {
 
 		return recipes;
 	}
-
+	
+	
+	public List<Recipe> getGlutenFree() {
+		return getAllRecipes().stream()
+				 .filter(Recipe::getGlutenFree)
+				 .collect(Collectors.toList());
+	}
+	
+	public List<Recipe> getVeganAndGlutenFree() {
+		return getAllRecipes().stream()
+				  .filter(Recipe::getGlutenFree)
+				  .filter(Recipe::getVegan)
+				  .collect(Collectors.toList());
+	}
+	public List<Recipe> getVegetarian() {
+		return getAllRecipes().stream()
+				 .filter(Recipe::getVegetarian)
+				 .collect(Collectors.toList());
+	}
+	public List<Recipe> getVegan() {
+		return getAllRecipes().stream()
+				 .filter(Recipe::getVegan)
+				 .collect(Collectors.toList());
+	}
 }
